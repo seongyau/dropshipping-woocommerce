@@ -96,6 +96,7 @@ class Knawat_Dropshipping_WC_Cron {
 		$data = array( 'pull_operation' => 'pull_order' );
 		$data['page'] = 1;
 		$data['limit'] = 10;
+		$data['import_type'] = 'fullcron';
 		$sync_process = new Knawat_Dropshipping_WC_Background();
 		$sync_process->push_to_queue( $data );
 		$sync_process->save()->dispatch();

@@ -20,6 +20,7 @@ class Knawat_Dropshipping_Woocommerce_Common {
 	 */
 	public function __construct() {
 		// Do anything Here. 
+		add_action( 'knawat_dropshipwc_run_product_manual_import', array( $this, 'knawat_dropshipwc_backgorund_product_manual_importer' ) );
 		add_action( 'knawat_dropshipwc_run_product_import', array( $this, 'knawat_dropshipwc_backgorund_product_importer' ) );
 		add_action( 'admin_init', array( $this, 'handle_knawat_settings_submit' ), 99 );
 		add_action( 'woocommerce_add_to_cart',  array( $this, 'knawat_dropshipwc_add_to_cart' ), 10, 2 );
@@ -127,6 +128,51 @@ class Knawat_Dropshipping_Woocommerce_Common {
 		}
 		$data = array();
 		$data['limit'] = $product_batch_size;
+		$data['import_type'] = 'fullcron';
+		$import_process = new Knawat_Dropshipping_WC_Background();
+		$import_process->push_to_queue( $data );
+		$import_process->save()->dispatch();
+	}
+
+	/**
+	 * Knawat Run Background import. This function is called by hourly cron.
+	 *
+	 * @since    1.0.0
+	 * @return 	 boolean
+	 */
+	public function knawat_dropshipwc_backgorund_product_manual_importer(){
+		$consumer_keys = knawat_dropshipwc_get_consumerkeys();
+		if( empty( $consumer_keys ) ){
+			return;
+		}
+
+		if ( ! class_exists( 'Knawat_Dropshipping_WC_Background', false ) ) {
+			return;
+		}
+
+		// Validate access token
+		do_action( 'knawat_dropshipwc_validate_access_token' );
+
+		global $wpdb;
+		$count_query = "SELECT count(option_id) as count FROM {$wpdb->options} WHERE option_name LIKE '%kdropship_import_batch_%' AND option_value NOT LIKE '%pull_operation%' ORDER BY option_id ASC";
+		if ( is_multisite() ) {
+			$count_query = "SELECT count(meta_id) as count FROM {$wpdb->sitemeta} WHERE meta_key LIKE '%kdropship_import_batch_%' AND meta_value NOT LIKE '%pull_operation%' ORDER BY meta_id ASC";
+		}
+		$count = $wpdb->get_var( $count_query );
+
+		if( $count > 0 ){
+			global $knawatdswc_errors;
+			$knawatdswc_errors[] = __( 'Another product import is in process already.', 'dropshipping-woocommerce' );
+			return false;
+		}
+
+		$product_batch_size = knawat_dropshipwc_get_product_batch_size();
+		if( empty( $product_batch_size ) || $product_batch_size < 0 || $product_batch_size > 1000 ){
+			$product_batch_size = 25;
+		}
+		$data = array();
+		$data['limit'] = $product_batch_size;
+		$data['import_type'] = 'full';
 		$import_process = new Knawat_Dropshipping_WC_Background();
 		$import_process->push_to_queue( $data );
 		$import_process->save()->dispatch();

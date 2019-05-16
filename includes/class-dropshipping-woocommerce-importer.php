@@ -98,6 +98,15 @@ class Knawat_Dropshipping_Woocommerce_Importer extends WC_Product_Importer {
 
 		switch ( $this->import_type ) {
 			case 'full':
+				$knawat_last_imported = 0;  // setting tje last import time to 0 incase manual import
+				$api_url = 'catalog/products/?limit='.$this->params['limit'].'&page='.$this->params['page'];
+				if( !empty( $knawat_last_imported ) && $this->params['force_full_import'] != 1 ){
+					$api_url .= '&lastupdate='.$knawat_last_imported;
+				}
+				$this->data = $this->mp_api->get( $api_url );
+				break;
+
+			case 'fullcron':
 				$knawat_last_imported = get_option( 'knawat_last_imported', false );
 				$api_url = 'catalog/products/?limit='.$this->params['limit'].'&page='.$this->params['page'];
 				if( !empty( $knawat_last_imported ) && $this->params['force_full_import'] != 1 ){
