@@ -426,7 +426,7 @@ class Knawat_Dropshipping_Woocommerce_Admin {
 	public function knawat_start_manual_product_import() {
 		if( wp_verify_nonce( $_GET['manual_nonce'], 'knawatds_manual_import_action') ){
 			global $knawatdswc_errors;
-			do_action( 'knawat_dropshipwc_run_product_manual_import' );
+			do_action( 'knawat_dropshipwc_run_product_import' );
 
 			if( empty( $knawatdswc_errors ) ){
 				$redirect_url = esc_url_raw( add_query_arg( array( 'tab' => 'import', 'manual_run' => '1' ), $this->adminpage_url ) );

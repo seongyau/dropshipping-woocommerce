@@ -49,8 +49,7 @@ class Knawat_Dropshipping_WC_Background extends WP_Background_Process {
 			return false;
 		}
 
-		$import_type = $item['import_type'];
-		$importer = new Knawat_Dropshipping_Woocommerce_Importer( $import_type, $item );
+		$importer = new Knawat_Dropshipping_Woocommerce_Importer( 'full', $item );
 		$results = $importer->import();
 		$params = $importer->get_import_params();
 
