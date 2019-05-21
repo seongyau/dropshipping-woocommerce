@@ -95,7 +95,7 @@ class Knawat_Dropshipping_Woocommerce_Common {
 	 * @since    1.0.0
 	 * @return 	 boolean
 	 */
-	public function knawat_dropshipwc_backgorund_product_importer(){
+	public function knawat_dropshipwc_backgorund_product_importer($args){
 		$consumer_keys = knawat_dropshipwc_get_consumerkeys();
 		if( empty( $consumer_keys ) ){
 			return;
@@ -127,6 +127,7 @@ class Knawat_Dropshipping_Woocommerce_Common {
 		}
 		$data = array();
 		$data['limit'] = $product_batch_size;
+		$data = wp_parse_args( $data, $args );
 		$import_process = new Knawat_Dropshipping_WC_Background();
 		$import_process->push_to_queue( $data );
 		$import_process->save()->dispatch();
