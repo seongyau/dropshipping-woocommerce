@@ -491,7 +491,7 @@ class Knawat_Dropshipping_WC_MP_Orders {
 	 * Push order to knawat using async fuction call.
 	 *
 	 * @access public
-	 * @since 2.0.1
+	 * @since 2.0.2
 	 * @return void
 	 */
 	public function knawatds_order_syncronize( $order_id ){

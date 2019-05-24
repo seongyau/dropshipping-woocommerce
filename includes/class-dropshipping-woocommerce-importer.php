@@ -592,7 +592,7 @@ class Knawat_Dropshipping_Woocommerce_Importer extends WC_Product_Importer {
 	/**
 	 * Get Existing Attribute options by product ID and Attribute name.
 	 *
-	 * @since 2.0.1
+	 * @since 2.0.2
 	 * @param array $product_id Product ID for get attribute options
 	 * @param array $attribute_name Attribute name for get attribute options
 	 * @return array $terms Attribute options
@@ -637,7 +637,7 @@ class Knawat_Dropshipping_Woocommerce_Importer extends WC_Product_Importer {
 	/**
 	 * Get Formated string with qtranslate-X languege wrappers for lang object.
 	 *
-	 * @since 2.0.1
+	 * @since 2.0.2
 	 * @param array $lang_object Object of values with lang keys
 	 * @return string $formated_value Formated string with language wrappers.
 	 */
