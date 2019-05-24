@@ -62,6 +62,8 @@ Knawat WooCommerce DropShipping allows you to Add products to your WooCommerce s
 * ADDED: Support for WordPress 5.0
 * IMPROVEMENT: Some Improvements
 * FIXED: some bug fixes.
+* ADDED: Knawat handshake.
+* UPDATED: "start import" button to get all products 
 
 = 2.0.0 =
 <strong>MAJOR UPDATE</strong>
