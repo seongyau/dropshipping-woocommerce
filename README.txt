@@ -52,9 +52,14 @@ Knawat WooCommerce DropShipping allows you to Add products to your WooCommerce s
 3. Log into WordPress and navigate to the "Plugins" screen.
 4. Locate "Knawat WooCommerce DropShipping" in the list and click the "Activate" link.
 
+== Screenshots ==
+
+1. ![Alt text](https://knawat.com/wp-content/uploads/2019/05/sc10.png?raw=true "Product Import")
+2. ![Alt text](https://knawat.com/wp-content/uploads/2019/05/sc11.png?raw=true "Settings")
+
 == Changelog ==
 
-= 2.0.2
+= 2.0.2 =
 * IMPROVEMENT: Some Improvements.
 * ADDED: Knawat handshake.
 * IMPROVEMENT: "start import" button to get all products.
@@ -101,3 +106,10 @@ Knawat WooCommerce DropShipping allows you to Add products to your WooCommerce s
 
 = 1.0.0 =
 * Initial Version.
+
+== Frequently Asked Questions ==
+1. Q: How to contribute ?
+    A: Please join us [here](https://github.com/Knawat/dropshipping-woocommerce)
+
+== Upgrade Notice == 
+1. 
