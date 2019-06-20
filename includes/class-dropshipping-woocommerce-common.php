@@ -90,12 +90,13 @@ class Knawat_Dropshipping_Woocommerce_Common {
 	}
 
 	/**
-	 * Knawat Run Background import. This function is called by hourly cron.
-	 *
+	 * Knawat products import, trigged by cronjob or import button
+	 * 
 	 * @since    1.0.0
-	 * @return 	 boolean
+	 * @param array $args
+	 * @return void
 	 */
-	public function knawat_dropshipwc_backgorund_product_importer($args){
+	public function knawat_dropshipwc_backgorund_product_importer($args = array()){
 		$consumer_keys = knawat_dropshipwc_get_consumerkeys();
 		if( empty( $consumer_keys ) ){
 			return;

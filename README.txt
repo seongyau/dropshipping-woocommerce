@@ -1,10 +1,10 @@
 === Knawat WooCommerce DropShipping ===
-Contributors: dharm1025,knawat,esl4m
+Contributors: knawat,dharm1025,esl4m
 Tags: dropshipping, woocommerce, woocommerce dropshipping, dropship, woo dropshipping, knawat, knawat dropshiping
 Requires PHP: 5.3
 Requires at least: 4.0
 Tested up to: 5.0
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,9 @@ Knawat WooCommerce DropShipping allows you to Add products to your WooCommerce s
 2. ![Alt text](https://knawat.com/wp-content/uploads/2019/05/sc11.png?raw=true "Settings")
 
 == Changelog ==
+
+= 2.0.3 =
+* FIX: Background import products was broken.
 
 = 2.0.2 =
 * IMPROVEMENT: Some Improvements.

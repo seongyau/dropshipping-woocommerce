@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Knawat WooCommerce DropShipping package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Knawat WooCommerce DropShipping 2.0.2\n"
+"Project-Id-Version: Knawat WooCommerce DropShipping 2.0.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/dropshipping-"
 "woocommerce\n"
 "POT-Creation-Date: 2018-12-11 06:19:18+00:00\n"
@@ -1141,9 +1141,9 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#. #-#-#-#-#  dropshipping-woocommerce.pot (Knawat WooCommerce DropShipping 2.0.2)  #-#-#-#-#
+#. #-#-#-#-#  dropshipping-woocommerce.pot (Knawat WooCommerce DropShipping 2.0.3)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#. #-#-#-#-#  dropshipping-woocommerce.pot (Knawat WooCommerce DropShipping 2.0.2)  #-#-#-#-#
+#. #-#-#-#-#  dropshipping-woocommerce.pot (Knawat WooCommerce DropShipping 2.0.3)  #-#-#-#-#
 #. Description of the plugin/theme
 msgid "Knawat WooCommerce DropShipping"
 msgstr ""
