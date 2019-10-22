@@ -1262,7 +1262,7 @@ class Knawat_Dropshipping_Woocommerce_Orders {
         // manual fix for $post->get_id() to check if it exists.
         if (method_exists($post,'get_id')){
             $knawat_order_ds = get_post_meta( $post->get_id(), '_knawat_order_ds', true );
-		}
+	}
         if( !empty( $knawat_order_ds ) ){
             $dropshippers = knawat_dropshipwc_get_dropshippers();
             if( isset( $dropshippers[$knawat_order_ds] ) ){
