@@ -1231,7 +1231,7 @@ class Knawat_Dropshipping_Woocommerce_Orders {
 
         $suborder_ids = array();
         
-        // manual fix for $post->get_parent_id() to check if it exists in (04/10/2019)
+        // manual fix for $post->get_parent_id() to check if it exists.
         if( $post && method_exists($post, 'get_parent_id') && 0 == $post->get_parent_id() ){
             $suborder_ids = $this->knawat_dropshipwc_get_suborder( $post->get_id() );
         }
@@ -1259,10 +1259,10 @@ class Knawat_Dropshipping_Woocommerce_Orders {
             return $response;
         }
 
-        // manual fix for $post->get_id() to check if it exists in (4/10/2019 , 06:35)
+        // manual fix for $post->get_id() to check if it exists.
         if (method_exists($post,'get_id')){
             $knawat_order_ds = get_post_meta( $post->get_id(), '_knawat_order_ds', true );
-	}
+		}
         if( !empty( $knawat_order_ds ) ){
             $dropshippers = knawat_dropshipwc_get_dropshippers();
             if( isset( $dropshippers[$knawat_order_ds] ) ){
