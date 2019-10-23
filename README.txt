@@ -1,5 +1,5 @@
 === Knawat WooCommerce DropShipping ===
-Contributors: knawat,dharm1025,esl4m
+Contributors: knawat,dharm1025,esl4m,firstanonymous
 Tags: dropshipping, woocommerce, woocommerce dropshipping, dropship, woo dropshipping, knawat, knawat dropshiping
 Requires PHP: 5.3
 Requires at least: 4.0
