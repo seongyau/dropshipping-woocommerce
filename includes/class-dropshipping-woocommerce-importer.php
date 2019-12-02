@@ -371,7 +371,12 @@ if (class_exists('WC_Product_Importer', false)) :
 					} else {
 						$temp_variant['sku']  = $variation->sku;
 						$temp_variant['name'] = $new_product['name'];
-						$temp_variant['type'] = 'variation';
+						if(count($product->variations) > 1){
+							$temp_variant['type'] = 'variation';
+						}
+						else if (count($product->variations) == 1){
+							$temp_variant['type'] = 'simple';
+						}
 					}
 
 					// Add Meta Data.
@@ -440,6 +445,7 @@ if (class_exists('WC_Product_Importer', false)) :
 				}
 			}
 			$new_product['variations'] = $variations;
+			error_log("New Product: " . json_encode($new_product));
 			return $new_product;
 		}
 
