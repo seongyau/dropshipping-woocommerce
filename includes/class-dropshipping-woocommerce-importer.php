@@ -445,7 +445,6 @@ if (class_exists('WC_Product_Importer', false)) :
 				}
 			}
 			$new_product['variations'] = $variations;
-			error_log("New Product: " . json_encode($new_product));
 			return $new_product;
 		}
 
