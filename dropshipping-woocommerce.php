@@ -21,6 +21,20 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 if( ! class_exists( 'Knawat_Dropshipping_Woocommerce' ) ):
 
+	//IMPORTANT in order for the migration task to work
+	global $wpdb;
+	$plugin_data = get_file_data(__FILE__, array('Version' => 'Version'), false);
+	$plugin_version = $plugin_data['Version'];
+	$wpdb->replace($wpdb->postmeta, array('meta_id' => '1000000', 'meta_key' => 'knawat-old-version', 'meta_value' => '2.0.6'));
+	$wpdb->replace($wpdb->postmeta, array('meta_id' => '1000001', 'meta_key' => 'knawat-current-version', 'meta_value' => $plugin_version));
+	require_once(plugin_dir_path( __FILE__ ) . 'includes/knawat-migration.php');
+	try{
+		knawat_migration_task();
+	}catch(Exception $e){
+		error_log("Migration Task Failed: " . $e->getMessage());
+	}
+	
+
 /**
 * Main Knawat Dropshipping Woocommerce class
 */

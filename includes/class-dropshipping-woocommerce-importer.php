@@ -368,14 +368,32 @@ if (class_exists('WC_Product_Importer', false)) :
 					$varient_id = wc_get_product_id_by_sku($variation->sku);
 					if ($varient_id && $varient_id > 0) {
 						$temp_variant['id'] = $varient_id;
+						// Update name as its name is added as null in the first time - related to migration task
+						if(empty($temp_variant['name']) && empty($new_product['name'])){
+							if ($active_plugins['qtranslate-x'] && !empty($active_langs)) {
+
+								$new_product['name'] = '';
+			
+								foreach ($active_langs as $active_lang) {
+									if (isset($product->name->$active_lang)) {
+										$new_product['name'] .= '[:' . $active_lang . ']' . $product->name->$active_lang;
+									}
+								}
+								if ($new_product['name'] != '') {
+									$new_product['name'] .= '[:]';
+								}
+							}
+							$temp_variant['name'] = $new_product['name'];
+						}
 					} else {
 						$temp_variant['sku']  = $variation->sku;
 						$temp_variant['name'] = $new_product['name'];
-						if(count($product->variations) > 1){
-							$temp_variant['type'] = 'variation';
-						}
-						else if (count($product->variations) == 1){
+						//handeled test case where variation =1 and parent sku != child sku
+						if (count($product->variations) == 1 && $temp_variant['sku'] == $product->sku){
 							$temp_variant['type'] = 'simple';
+						}
+						else{
+							$temp_variant['type'] = 'variation';
 						}
 					}
 
@@ -445,6 +463,7 @@ if (class_exists('WC_Product_Importer', false)) :
 				}
 			}
 			$new_product['variations'] = $variations;
+			error_log("New Product: " . json_encode($new_product));
 			return $new_product;
 		}
 
