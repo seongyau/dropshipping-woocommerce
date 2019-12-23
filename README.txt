@@ -60,7 +60,7 @@ Knawat WooCommerce DropShipping allows you to Add products to your WooCommerce s
 == Changelog ==
 
 = 2.0.7 =
-* FIX: Product with only 1 variation gets added as a simple product instead of variable.
+* FIX: Product with only 1 variation gets added as a simple product instead of variation.
 
 = 2.0.6 =
 * ADDED: Support for WCFM Marketplace latest version.
