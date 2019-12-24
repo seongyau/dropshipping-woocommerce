@@ -1,10 +1,11 @@
 === Knawat WooCommerce DropShipping ===
 Contributors: knawat,dharm1025,esl4m,firstanonymous
-Tags: dropshipping, woocommerce, woocommerce dropshipping, dropship, woo dropshipping, knawat, knawat dropshipping, multivendor marketplace, WCFM Marketplace, Multi seller, Marketplace
+Tags: dropshipping, woocommerce, woocommerce dropshipping, dropship, woo dropshipping, knawat, knawat dropshipping, multivendor marketplace, WCFM Marketplace, Multi seller, Marketplace, Appmaker
 Requires PHP: 5.3
 Requires at least: 4.0
-Tested up to: 5.3
-Stable tag: 2.0.6
+Tested up to: 5.3.2
+Stable tag: 2.0.7
+WC tested up to: 3.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +59,9 @@ Knawat WooCommerce DropShipping allows you to Add products to your WooCommerce s
 2. ![Alt text](https://knawat.com/wp-content/uploads/2019/05/sc11.png?raw=true "Settings")
 
 == Changelog ==
+
+= 2.0.7 =
+* FIX: Product with only 1 variation gets added as a simple product instead of variation.
 
 = 2.0.6 =
 * ADDED: Support for WCFM Marketplace latest version.
