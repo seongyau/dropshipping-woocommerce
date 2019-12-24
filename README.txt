@@ -3,7 +3,7 @@ Contributors: knawat,dharm1025,esl4m,firstanonymous
 Tags: dropshipping, woocommerce, woocommerce dropshipping, dropship, woo dropshipping, knawat, knawat dropshipping, multivendor marketplace, WCFM Marketplace, Multi seller, Marketplace
 Requires PHP: 5.3
 Requires at least: 4.0
-Tested up to: 5.3
+Tested up to: 5.3.2
 Stable tag: 2.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
