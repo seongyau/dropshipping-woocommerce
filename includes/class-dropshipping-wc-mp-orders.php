@@ -211,8 +211,8 @@ class Knawat_Dropshipping_WC_MP_Orders {
 		$item_whitelist_fields = array( 'id', 'sku', 'quantity' );
 		$new_order = array();
 
-		$search_order  = array( 'line_items', 'pdf_invoice_url', 'pdf_invoice_url_rtl' );
-		$replace_order = array( 'items', 'invoice_url', 'invoice_url_rtl' );
+		$search_order  = array( 'line_items', 'pdf_invoice_url', 'pdf_invoice_url_rtl', 'customer_note' );
+		$replace_order = array( 'items', 'invoice_url', 'invoice_url_rtl', 'notes' );
 		foreach ( $order as $key => $value ) {
 			if ( in_array( $key, $order_whitelist_fields ) ) {
 
